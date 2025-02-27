@@ -232,8 +232,8 @@ describe('bRules', () => {
     assert.equal(bRules.businessNumber()(0), false);
     assert.equal(bRules.businessNumber()({}), false);
     assert.equal(bRules.businessNumber()(123456789), false);
-    assert.equal(bRules.businessNumber()(1234567890), true);
-    // TODO: 사업자번호 중 마지막 숫자가 유효한지 확인. 관련 이슈 #9
+    assert.equal(bRules.businessNumber()(1231212344), false);
+    assert.equal(bRules.businessNumber()(1231212345), true);
   });
 
   it('tel', () => {
