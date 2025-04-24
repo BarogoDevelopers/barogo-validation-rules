@@ -337,14 +337,14 @@ export const bRules = Object.assign({
   businessNumber(msg = false) {
     const verifyChecksum = (vs) => (
       (
-        10 - (
+        (10 - (
           (
             [1, 3, 7, 1, 3, 7, 1, 3, 5]
             .map((w, i) => w * Number(vs[i]))
             .reduce((a, b) => a + b)
             + Math.floor((Number(vs[8]) * 5) / 10)
           ) % 10
-        )
+        )) % 10
       ) === Number(vs[9])
     );
 
